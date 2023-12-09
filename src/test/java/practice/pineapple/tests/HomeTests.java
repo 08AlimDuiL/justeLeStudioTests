@@ -8,7 +8,7 @@ import practice.pineapple.runner.order.BaseTest;
 import java.util.Arrays;
 import java.util.List;
 
-public class HomePageTests extends BaseTest {
+public class HomeTests extends BaseTest {
 
     @Test
     public void testHeaderAbout() {
