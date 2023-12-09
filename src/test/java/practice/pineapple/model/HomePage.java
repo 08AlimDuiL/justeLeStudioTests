@@ -13,13 +13,14 @@ public class HomePage extends BasePage {
     private final By HEDER_ABOUT_THE_STUDIO = By.xpath(
             "//section[@class='_about_ze3bk_1']/div/h1"
     );
-
     private final By ALL_HEDERS = By.xpath("//h1");
+    private final By LINK_TO_REVIEWS = By.xpath("//section/a[@href='/reviews']");
 
 
     public HomePage(WebDriver driver) {
-        // ни чего своего делать не нужно, так как драйвер,который нам передадут нужно передать в конструктор BasePage
-        super(driver); //вызвать супер
+        // ни чего своего делать не нужно, так как драйвер,который нам передадут
+        // нужно передать в конструктор BasePage
+        super(driver);
     }
 
     public WebElement getHederAboutTheStudio() {
@@ -30,6 +31,19 @@ public class HomePage extends BasePage {
     public List<WebElement> getAllHeaders() {
 
         return getDriver().findElements(ALL_HEDERS);
+    }
+
+    public WebElement getLinkToReviews() throws InterruptedException {
+
+        WebElement link = getDriver().findElement(LINK_TO_REVIEWS);
+        Thread.sleep(5000);
+
+        return link;
+    }
+
+    public String getTextHederAboutTheStudio() {
+
+        return getText(getHederAboutTheStudio());
     }
 
     public List<String> getTextAllHeaders() {
@@ -43,8 +57,10 @@ public class HomePage extends BasePage {
         return allHeaders;
     }
 
-    public String getTextHederAboutTheStudio() {
+    public FeedbackPage clickLinkToReviews() {
 
-        return getText(getHederAboutTheStudio());
+        getDriver().findElement(By.xpath("//section/a[@href='/reviews']/div/h6")).click();
+
+        return new FeedbackPage(getDriver());
     }
 }
