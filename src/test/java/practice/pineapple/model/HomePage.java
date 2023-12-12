@@ -33,10 +33,9 @@ public class HomePage extends BasePage {
         return getDriver().findElements(ALL_HEDERS);
     }
 
-    public WebElement getLinkToReviews() throws InterruptedException {
+    public WebElement getLinkToReviews() {
 
         WebElement link = getDriver().findElement(LINK_TO_REVIEWS);
-        Thread.sleep(5000);
 
         return link;
     }
