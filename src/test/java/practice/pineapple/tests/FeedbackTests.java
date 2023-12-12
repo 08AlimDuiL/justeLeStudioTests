@@ -11,7 +11,7 @@ public class FeedbackTests extends BaseTest {
     final String headerExpectedResult = "Отзывы";
 
     @Test
-    public void testHederReviewsAfterNavigatingFromHomePage() throws InterruptedException {
+    public void testHederReviewsAfterNavigatingFromHomePage() {
 
         openBaseURL();
         String headerActualResult = new HomePage(getDriver())
