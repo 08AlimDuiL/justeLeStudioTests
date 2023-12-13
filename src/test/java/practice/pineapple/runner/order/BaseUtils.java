@@ -54,10 +54,12 @@ public final class BaseUtils {
     }
 
     static Properties getProperties() {
+
         return properties;
     }
 
     static boolean isServerRun() {
+
         return System.getenv("CI_RUN") != null;
     }
 

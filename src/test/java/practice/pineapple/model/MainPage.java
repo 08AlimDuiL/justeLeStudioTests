@@ -1,27 +1,22 @@
 package practice.pineapple.model;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import practice.pineapple.model.base.BasePage;
 
 public class MainPage extends BasePage {
 
-    private final By MENU_REVIEWS = By.xpath("//nav/ul/li/a[@href='/reviews']");
+    @FindBy(xpath = "//nav/ul/li/a[@href='/reviews']")
+    private WebElement menuReviews;
 
     public MainPage(WebDriver driver) {
 
         super(driver);
     }
 
-    public WebElement getMenuReviews() {
-
-        return getDriver().findElement(MENU_REVIEWS);
-    }
-
     public FeedbackPage clickMenuReviews() {
-
-        getMenuReviews().click();
+        menuReviews.click();
 
         return new FeedbackPage(getDriver());
     }

@@ -37,6 +37,5 @@ public class HomeTests extends BaseTest {
                 .getTextAllHeaders();
 
         Assert.assertEquals(headersActualResult, headersExpectedResult);
-
     }
 }

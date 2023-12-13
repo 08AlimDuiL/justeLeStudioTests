@@ -3,19 +3,11 @@ package practice.pineapple.model.base;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public abstract class BasePage {
-
-    private final WebDriver driver;
+public abstract class BasePage extends BaseModel {
 
     public BasePage(WebDriver driver) {
 
-        this.driver = driver;
-    }
-
-    //чтобы этот метод был доступен  только  наследникам
-    protected WebDriver getDriver() {
-        //будем использовать
-        return driver;
+        super(driver);
     }
 
     public String getText(WebElement element) {
